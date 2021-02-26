@@ -3,6 +3,7 @@ name: Gatsby Publish
 on:
   repository_dispatch:
   workflow_dispatch:
+    ref: dev
   push:
     branches:
       - dev
