@@ -1,0 +1,45 @@
+{
+    "Main" : {
+      "uid" : {
+        "type" : "UID",
+        "config" : {
+          "label" : "Slug"
+        }
+      },
+      "title" : {
+        "type" : "StructuredText",
+        "config" : {
+          "single" : "heading1, heading2, heading3, heading4, heading5, heading6",
+          "label" : "title",
+          "placeholder" : "Blog Title"
+        }
+      },
+      "article" : {
+        "type" : "StructuredText",
+        "config" : {
+          "multi" : "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
+          "label" : "article",
+          "placeholder" : "Article body"
+        }
+      },
+      "author" : {
+        "type" : "StructuredText",
+        "config" : {
+          "multi" : "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
+          "label" : "author",
+          "placeholder" : "Article Author"
+        }
+      },
+      "image" : {
+        "type" : "Image",
+        "config" : {
+          "constraint" : {
+            "width" : 640,
+            "height" : 480
+          },
+          "thumbnails" : [ ],
+          "label" : "image"
+        }
+      }
+    }
+  }
