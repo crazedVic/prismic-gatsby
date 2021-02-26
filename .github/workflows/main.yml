@@ -1,6 +1,7 @@
 name: Gatsby Publish
 
 on:
+  repository_dispatch:
   push:
     branches:
       - dev
