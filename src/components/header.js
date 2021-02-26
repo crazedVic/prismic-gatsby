@@ -7,6 +7,10 @@ const Header = ({ siteTitle }) => (
     style={{
       background: `rebeccapurple`,
       marginBottom: `1.45rem`,
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      paddingRight: 10
     }}
   >
     <div
@@ -28,6 +32,12 @@ const Header = ({ siteTitle }) => (
         </Link>
       </h1>
     </div>
+    <Link 
+      to="/about"
+      style={{
+        color:'white',
+        textDecoration: 'none'
+      }}>About Us</Link>
   </header>
 )
 

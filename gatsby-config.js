@@ -1,9 +1,14 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@gatsbyjs`,
   },
+  pathPrefix: "/prismic-gatsby",
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
@@ -11,6 +16,26 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: "gatsby-source-prismic",
+      options: {
+          repositoryName: "preterra",
+          accessToken: process.env.PRISMIC_API_ACCESS_TOKEN,
+  
+          schemas: {
+              blogs: require("./src/schemas/blogs.json"),
+              about_page: require("./src/schemas/about_page.json"),
+          },
+          shouldDownloadImage: ({
+              node,
+              key,
+              value
+          }) => {
+              // Return true to download the image or false to skip.
+              return true
+          },
       },
     },
     `gatsby-transformer-sharp`,
